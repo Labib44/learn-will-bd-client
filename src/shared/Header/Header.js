@@ -3,11 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="info" variant="light">
                 <Container>
                     <Navbar.Brand href="#home">Learn-will</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -28,7 +29,8 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
+                            <Link to={'/login'}>Login</Link>
+                            <Link to={'/register'}>Register</Link>
                             <Nav.Link eventKey={2} href="#memes">
                                 Dank memes
                             </Nav.Link>
