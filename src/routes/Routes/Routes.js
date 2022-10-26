@@ -9,7 +9,9 @@ import Register from "../../shared/Register/Register";
 export const routes=createBrowserRouter([
     {path:'/', element:<Main></Main>, children:[
 
-        {path:'/', element:<Home></Home>},
+        {path:'/', element:<Home></Home>,
+        loader:()=>fetch('http://localhost:5000/course-category')
+    },
         {path:'/login', element:<Login></Login>},
         {path:'/register', element:<Register></Register>},
 
