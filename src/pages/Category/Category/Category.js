@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useLoaderData } from 'react-router-dom';
-import { AiOutlineStar } from "react-icons/fa";
+import { Link, useLoaderData } from 'react-router-dom';
+import { FaStar, FaEye } from "react-icons/fa";
 
 const Category = () => {
     const course = useLoaderData();
@@ -13,20 +13,30 @@ const Category = () => {
                 <Card.Img variant="top" src={course.picture} />
                 <Card.Body>
                     <Card.Title>{course.category}</Card.Title>
-                    <p>Lecture: {course.lecture}</p>
-                    <p>Total Quiz: {course.Quiz}</p>
-                    <p>Course Duration: {course.Duration}</p>
-                    <p>Language: {course.Language}</p>
-                    <p>Price: {course.balance}</p>
+                    <p className='mb-2'>Lecture: {course.lecture}</p>
+                    <p className='mb-2'>Total Quiz: {course.Quiz}</p>
+                    <p className='mb-2'>Course Duration: {course.Duration}</p>
+                    <p className='mb-2'>Language: {course.Language}</p>
+                    <p className='mb-2'>Price: {course.balance}</p>
                     <Card.Text>
-                        {course.details}
+                        
+                        {
+                       course.details.length >200 ?
+                       <p>{course.details.slice(0,200) + '...'} <Link>Read More</Link></p>
+                       :
+                       <p>{course.details}</p>
+                       }
                     </Card.Text>
                     <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
-                <Card.Footer>
-                    
-          <small className="text-muted"> Rating: {course.rating}</small>
-          <small className="text-muted ">Views: {course.totalView}</small>
+                <Card.Footer className='d-flex justify-content-between align-items-center'>
+                    <div>
+                    <FaStar className='me-2'> </FaStar>{course?.rating}
+                    </div>
+                    <div>
+                    <FaEye className='me-2'></FaEye>{course?.totalView}
+                    </div>
+          
         </Card.Footer>
             </Card>
         </div>

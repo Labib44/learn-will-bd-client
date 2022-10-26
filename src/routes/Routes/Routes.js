@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import Category from "../../pages/Category/Category/Category";
 import Course from "../../pages/Course/Course";
 import Home from "../../pages/Home/Home";
+import CourseDetails from "../../shared/CourseDetails/CourseDetails";
 import Login from "../../shared/Login/Login";
 import Register from "../../shared/Register/Register";
 
@@ -19,7 +20,9 @@ export const routes=createBrowserRouter([
         loader:({params})=>fetch(`http://localhost:5000/course/${params.id}`)
     },
 
-        {path:'/course/:id', element:<Course></Course>},
+        {path:'/course/:id', element:<CourseDetails></CourseDetails>,
+        loader:()=>fetch('')
+    },
 
     ]}
 ])
