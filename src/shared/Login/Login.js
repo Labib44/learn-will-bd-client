@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle, FaGithub } from "react-icons/fa";
@@ -6,9 +6,14 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Login = () => {
+    const [error, setError]=useState('');
     const { providerLogin, signIn } = useContext(AuthContext);
+    const navigate=useNavigate();
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -32,8 +37,13 @@ const Login = () => {
             const user=result.user;
             console.log(user);
             form.reset();
+            setError('');
+            navigate('/')
         })
-        .catch(error=> console.error(error))
+        .catch(error=> {
+            console.error(error)
+            setError(error.message);
+        })
 
     }
 
@@ -57,7 +67,7 @@ const Login = () => {
                     Submit
                 </Button>
                 <Form.Text className="text-danger ms-5">
-                    We'll never share your email with anyone else.
+                    {error}
                 </Form.Text>
                 <br />
                 <ButtonGroup vertical>
