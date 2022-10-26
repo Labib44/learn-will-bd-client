@@ -22,8 +22,8 @@ const CourseCard = ({ course }) => {
                     </div>
                     <Card.Text>
                        {
-                       details.length >200 ?
-                       <p>{details.slice(0,200) + '...'} <Link>Read More</Link></p>
+                       details.length >100 ?
+                       <p>{details.slice(0,100) + '...'} <Link to={`/details/${id}`}>Read More</Link></p>
                        :
                        <p>{details}</p>
                        }

@@ -10,6 +10,7 @@ const Category = () => {
         <div className='m-3'>
             
             <Card style={{ width: '30rem' }}>
+                
                 <Card.Img variant="top" src={course.picture} />
                 <Card.Body>
                     <Card.Title>{course.category}</Card.Title>
@@ -21,8 +22,8 @@ const Category = () => {
                     <Card.Text>
                         
                         {
-                       course.details.length >200 ?
-                       <p>{course.details.slice(0,200) + '...'} <Link>Read More</Link></p>
+                       course.details.length >100 ?
+                       <p>{course.details.slice(0,100) + '...'} <Link to={`/details/${course.id}`}>Read More</Link></p>
                        :
                        <p>{course.details}</p>
                        }
