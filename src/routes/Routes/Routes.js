@@ -22,7 +22,7 @@ export const routes = createBrowserRouter([
 
             {
                 path: '/courses', element: <Course></Course>,
-                loader: () => fetch('http://localhost:5000/course-category')
+                loader: () => fetch('https://learn-will-bd-server.vercel.app/course-category')
             },
 
             { path: '/login', element: <Login></Login> },
@@ -30,12 +30,12 @@ export const routes = createBrowserRouter([
 
             {
                 path: '/category/:id', element: <Category></Category>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://learn-will-bd-server.vercel.app/course/${params.id}`)
             },
 
             {
                 path: '/details/:id', element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://learn-will-bd-server.vercel.app/course/${params.id}`)
             },
 
 
@@ -44,7 +44,7 @@ export const routes = createBrowserRouter([
     { path: '/faq', element: <Faq></Faq> },
     { path: '/blog', element: <Blog></Blog> },
     { path: '/checkOut/:id', element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-    loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+    loader: ({ params }) => fetch(`https://learn-will-bd-server.vercel.app/course/${params.id}`)
 },
 {path:'/*', element:<Error></Error>}
 
