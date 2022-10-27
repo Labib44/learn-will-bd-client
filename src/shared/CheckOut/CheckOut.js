@@ -14,7 +14,7 @@ const CheckOut = () => {
     return (
        
             
-           <div className='d-flex  justify-content-center '>
+           <div className='container d-flex  justify-content-center '>
            <Card style={{ width: '25rem' }}>
                 <Card.Img variant="top" src={picture} />
                 <Card.Body>

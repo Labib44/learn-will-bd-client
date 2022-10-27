@@ -19,7 +19,7 @@ const CourseDetails = () => {
                     <Card.Text>
                     {details}
                     </Card.Text>
-                    <Button variant="primary"><Link className='text-black' to={'/'}>Home</Link></Button>
+                    <Link className='btn btn-outline-primary btn-lg' to={'/'}>Home</Link>
                 </Card.Body>
                 <Card.Footer className="d-flex justify-content-between align-items-center ">
                     <div className='m-2'>

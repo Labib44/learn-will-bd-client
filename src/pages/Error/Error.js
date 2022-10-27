@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Error = () => {
     return (
       
-            <div className="container d-flex  justify-content-center">
+            <div className="container d-flex  justify-content-center p-5">
                 <div className="row">
                     <div className="col-md-12">
                         <div className="error-template">
