@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
+import Review from '../pages/Review/Review';
 import Footer from '../shared/Footer/Footer';
 import Header from '../shared/Header/Header';
 import SideNav from '../shared/SideNav/SideNav';
@@ -21,6 +22,7 @@ const Main = () => {
                    
                 </Row>
             </Container>
+            <Review></Review>
             <Footer></Footer>
         </div>
     );
