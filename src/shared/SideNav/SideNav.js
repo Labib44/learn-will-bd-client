@@ -23,7 +23,7 @@ const SideNav = () => {
                     <Card.Text className="">
                             {
                                 categories.map(category => <p key={category.id}>                                  
-                                        <Link to={`/category/${category.id}`}>{category.category}</Link>
+                                        <Link className='btn btn-outline-info w-100 me-2' to={`/category/${category.id}`}>{category.category}</Link>
                                        
                                 </p>)
                             }                      

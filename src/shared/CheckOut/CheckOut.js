@@ -1,15 +1,15 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaStar, FaEye } from "react-icons/fa";
 import { toast } from 'react-toastify';
 
 const CheckOut = () => {
-    const { id, balance, picture, lecture, Quiz, category, Duration, Language, rating, totalView, title, details } = useLoaderData();
+    const { balance, picture,  rating, totalView, title,  } = useLoaderData();
     const checkOut=()=>{
  toast.success('succrss',{autoClose:3000,position:"top-center"})
- alert('success')
+ alert('Successfull your Check Out.')
     }
     return (
        
@@ -23,7 +23,9 @@ const CheckOut = () => {
                      <p>Price: {balance}</p>
                     </Card.Text>
                     <div className="d-flex justify-content-between align-items-center ">
-                    <Button onClick={checkOut} variant="primary">Check Out</Button>
+                   
+                    <Link className='btn btn-primary  me-2' onClick={checkOut}  to='/'>Check Out</Link>
+
                     <Button  variant="primary">Download pdf </Button>
                     </div>
                 </Card.Body>

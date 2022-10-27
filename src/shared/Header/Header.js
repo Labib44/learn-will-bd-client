@@ -21,7 +21,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="info" variant="light">
                 <Container>
-                    <Navbar.Brand ><Link to={'/'}>Learn-will</Link></Navbar.Brand>
+                    <Navbar.Brand ><Link  to={'/'}>Learn-will</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -40,10 +40,11 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Link class="btn btn-outline-light  me-2" to={'/courses'}>Courses</Link>
-                            <Link class="btn btn-outline-light  me-2" to={'/blog'}>Blog</Link>
-                            <Link class="btn btn-outline-light  me-2" to={'/login'}>Login</Link>
-                            <Link class="btn btn-outline-light  me-2" to={'/register'}>Register</Link>
+                            <Link className="btn btn-outline-light btn-lg me-2" to={'/courses'}>Courses</Link>
+                            <Link className="btn btn-outline-light btn-lg me-2" to={'/faq'}>FAQ</Link>
+                            <Link className="btn btn-outline-light btn-lg me-2" to={'/blog'}>Blog</Link>
+                            <Link className="btn btn-outline-light btn-lg me-2" to={'/login'}>Login</Link>
+                            <Link className="btn btn-outline-light btn-lg me-2" to={'/register'}>Register</Link>
                             <Nav.Link eventKey={2} href="#memes">
                                {
                                user?.uid ?
@@ -56,8 +57,7 @@ const Header = () => {
                                
                                }
                             </Nav.Link>
-                            <Nav.Link title={user?.displayName
-                            }>
+                            <Nav.Link  title={user?.displayName}>
 
                                {
                                 user?.photoURL ?

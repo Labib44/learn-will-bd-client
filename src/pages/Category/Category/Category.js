@@ -28,7 +28,7 @@ const Category = () => {
                        <p>{course.details}</p>
                        }
                     </Card.Text>
-                    <Button variant="primary"><Link className='text-white' to={'/checkOut'}>Get Premium</Link></Button>
+                    <Link className='btn btn-primary  me-2' to={`/checkOut/${course.id}`}>Get Premium</Link>
                 </Card.Body>
                 <Card.Footer className='d-flex justify-content-between align-items-center'>
                     <div>
