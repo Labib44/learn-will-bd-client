@@ -5,10 +5,10 @@ import CourseCard from '../../shared/CourseCard/CourseCard';
 const Course = () => {
     const allCourse=useLoaderData();
     return (
-        <div>
-            <h1>this is  Course component</h1>
+        <div className='m-3'>
+            
             <div className='m-3'>
-            <h1>all Course{allCourse.length}</h1>
+            <h1 className='text-center'>All Courses: {allCourse.length}</h1>
             
             {
                 allCourse.map(course=> <CourseCard

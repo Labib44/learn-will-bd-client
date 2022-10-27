@@ -40,10 +40,10 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Link to={'/blog'}>Blog</Link>
-                            <Link to={'/courses'}>Courses</Link>
-                            <Link to={'/login'}>Login</Link>
-                            <Link to={'/register'}>Register</Link>
+                            <Link class="btn btn-outline-light  me-2" to={'/courses'}>Courses</Link>
+                            <Link class="btn btn-outline-light  me-2" to={'/blog'}>Blog</Link>
+                            <Link class="btn btn-outline-light  me-2" to={'/login'}>Login</Link>
+                            <Link class="btn btn-outline-light  me-2" to={'/register'}>Register</Link>
                             <Nav.Link eventKey={2} href="#memes">
                                {
                                user?.uid ?
@@ -52,11 +52,13 @@ const Header = () => {
                                <Button onClick={handleLogout} variant="outline-light">Logout</Button>
                               </>
                                :
-                               <Link to={'/register'}>Register</Link>
+                               <Link class="btn btn-outline-light " to={'/register'}>Register</Link>
                                
                                }
                             </Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
+                            <Nav.Link title={user?.displayName
+                            }>
+
                                {
                                 user?.photoURL ?
                                 <Image style={{height:'30px'}}
