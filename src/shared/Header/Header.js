@@ -40,6 +40,8 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
+                            <Link to={'/blog'}>Blog</Link>
+                            <Link to={'/courses'}>Courses</Link>
                             <Link to={'/login'}>Login</Link>
                             <Link to={'/register'}>Register</Link>
                             <Nav.Link eventKey={2} href="#memes">
